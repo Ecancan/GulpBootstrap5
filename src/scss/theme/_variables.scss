@@ -1,0 +1,102 @@
+// example: color: $primary;
+
+// main
+$body-bg:                  #fff;
+$spacer:                     15px;
+$white:                      $body-bg;
+
+// colors
+$primary:                  #F6416C;
+$accent:                   #FFDE7D;
+$second-color:             #FFF8D2;
+$third-color:              #FDFBF0;
+$back-color:               #fafafa;
+$title-color:              #000000;
+$text-color:               #444444;
+$text-color-1:             #5F5F5F;
+$text-color-2:             #A9A9A9;
+$text-color-3:             #C6C6C6;
+$text-color-4:             #CBCBCB;
+$base-color:                $text-color;
+$link-color:               #F6416C;
+
+ 
+
+//Typography
+$font-family-sans-serif:    'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$font-family-monospace:     SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+$font-family-base:          $font-family-sans-serif;
+$font-family-second:        'Roboto', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+$font-weight-bold:          700;
+$font-weight-semibold:      600;
+$font-weight-medium:        500;
+$font-weight-normal:        400;
+$font-weight-light:         300;
+$font-weight-base:          $font-weight-normal;
+
+$line-height-base:          1.5;
+$headings-line-height:      1.2;
+
+$font-size-base:            15px;
+
+$font-size-1:               $font-size-base * 3.052;
+$font-size-2:               $font-size-base * 2.441;
+$font-size-3:               $font-size-base * 1.953;
+$font-size-4:               $font-size-base * 1.563;
+$font-size-5:               $font-size-base * 1.25;
+$font-size-6:               $font-size-base;
+$font-size-7:               $font-size-base - 1;
+$font-size-8:               $font-size-base * 0.8;
+$font-size-9:               $font-size-base * 0.64;
+$font-size-10:              $font-size-base * 0.512;
+
+//$font-size-base:            $font-size-6;
+
+$font-size-text:            $font-size-base;
+$h1-font-size:              $font-size-base * 3.052 !default;
+$h2-font-size:              $font-size-base * 2.441 !default;
+$h3-font-size:              $font-size-base * 1.953 !default;
+$h4-font-size:              $font-size-base * 1.563 !default;
+$h5-font-size:              $font-size-base * 1.25 !default;
+$h6-font-size:              $font-size-base !default;
+
+
+// Grid breakpoints
+/// Example: @include media-breakpoint-up(lg){css here}
+/// Example: @include media-breakpoint-down(xl){css here}
+
+$grid-breakpoints: (
+  xxs: 0px,
+  xs: 375px,
+  sm: 425px,
+  md: 768px,
+  lg: 992px,
+  xl: 1110px
+);
+
+//Buttons
+$button-border-radius: 25px;
+$button-box-shadow: none;
+$button-font-size: $font-size-base;
+$button-border: 0px solid transparent;
+$button-text-transform: uppercase;
+
+// Radius
+$radius-1:                  10px;
+$radius-2:                  6px;
+$radius-3:                  4px;
+
+//Shadows
+$primary-shadow: 0 4px 10px rgba(241,69,111,0.28);
+$accent-shadow: 0 4px 10px rgba(255,222,125,0.28);
+$shadow-general: 0 3px 6px rgba(0,0,0,0.10);
+$shadow-posts: 0 5px 50px rgba(0,0,0,0.07);
+$shadow-reverse: 0 -50px 50px rgba(0,0,0,0.16);
+$shadow-reverse-light: 0 -36px 32px rgba(0,0,0,0.03);
+$card-shadow: 0 12px 51px rgba(0,0,0,0.1);
+$big-slider-shadow: 0 20px 24px rgba(0,0,0,0.12);
+
+//Gradients
+$transparent-gradient: linear-gradient(40deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.5) 100%);
+$single-page-gradient: linear-gradient(to top,#fafafa 0%,#fff 30%);

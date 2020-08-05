@@ -1,0 +1,88 @@
+// example: @extend %primary-color;
+
+// Primary Color
+%primary-color {
+    color: $primary;
+}
+
+%primary-bg-color {
+    background-color: $primary;
+}
+
+%primary-border-color {
+    border-color: $primary;
+}
+
+// Heading Color
+%heading-color {
+    color: $title-color;
+}
+
+%heading-bg-color {
+    background-color: $title-color;
+}
+
+%heading-border-color {
+    border-color: $title-color;
+}
+
+// Text Color
+%text-color {
+    color: $text-color;
+}
+
+%text-bg-color {
+    background-color: $text-color;
+}
+
+%text-border-color {
+    border-color: $text-color;
+}
+
+%heading-size-lg-p {
+    font-size: $font-size-1;
+    font-weight: $font-weight-bold;
+    line-height: $headings-line-height;
+}
+
+%heading-size-lg {
+    font-size: $font-size-2;
+    font-weight: $font-weight-bold;
+    line-height: $headings-line-height;
+}
+
+%heading-size-md {
+    font-size: $font-size-3;
+    font-weight: $font-weight-medium;
+    line-height: $headings-line-height;
+}
+
+%heading-size-normal {
+    font-size: $font-size-4;
+    font-weight: $font-weight-medium;
+    line-height: $headings-line-height;
+}
+
+%heading-size-sm {
+    font-size: $font-size-5;
+    font-weight: $font-weight-medium;
+    line-height: $headings-line-height;
+}
+
+%heading-size-text {
+    font-size: $font-size-6;
+    font-weight: $font-weight-normal;
+    line-height: $line-height-base;
+}
+
+// Standart Codes
+
+%mp-0 {
+    margin: 0;
+    padding: 0;
+}
+
+%relative {
+    position: relative;
+}
+
