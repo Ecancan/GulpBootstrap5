@@ -5,7 +5,7 @@ const cleanCSS = require('gulp-clean-css');
 const minifyJS = require('gulp-uglify');
 const concat = require('gulp-concat');
 const autoprefixer = require('gulp-autoprefixer');
-const runSequence = require('run-sequence');
+const runSequence = require('gulp4-run-sequence');
 var gcmq = require('gulp-group-css-media-queries');
 gulp.task('browser-sync', () => {
     browserSync.init({
@@ -74,10 +74,11 @@ gulp.task('js', () => {
         .pipe(browserSync.stream());
 });
 
-gulp.task('html', () => {
+gulp.task('html', (done) => {
     gulp.src('src/**/*.html')
         .pipe(gulp.dest('dist'))
         .pipe(browserSync.stream());
+        done();
 });
 
 gulp.task('watch', () => {
