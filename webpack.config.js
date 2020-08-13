@@ -1,16 +1,32 @@
 const path = require('path');
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
+const entry = require('webpack-glob-entry');
 
 module.exports = {
   mode: 'development',
-  entry: './src/js/bootstrap/index.esm.js',
+  entry: {
+    bootstrap: './src/js/bootstrap/index.esm.js',
+    vue: './src/components/components.js'
+  },
   output: {
-    filename: "js/bootstrap.js",
+    filename: "js/[name].bundle.js",
     path: path.resolve(__dirname, "dist")
   },
   module: {
     rules: [
-      { test: /\.js$/, exclude: /node_modules/, loader: "babel-loader" }
+      { test: /\.js$/, exclude: /node_modules/, use: 'babel-loader' },
+      { test: /\.vue$/, exclude: /node_modules/, use: 'vue-loader' },
+      { test: /\.css$/, exclude: /node_modules/, use: ['vue-style-loader', 'css-loader']},
     ]
+  },
+  plugins: [
+    // make sure to include the plugin for the magic
+    new VueLoaderPlugin()
+  ],
+  resolve: {
+      alias: {
+          vue: 'vue/dist/vue.js'
+      },
   },
   watch: true
 };

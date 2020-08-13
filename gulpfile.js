@@ -7,6 +7,8 @@ const concat = require('gulp-concat');
 const autoprefixer = require('gulp-autoprefixer');
 const runSequence = require('gulp4-run-sequence');
 var gcmq = require('gulp-group-css-media-queries');
+const purgecss = require('gulp-purgecss')
+
 gulp.task('browser-sync', () => {
     browserSync.init({
         server: {
@@ -15,33 +17,8 @@ gulp.task('browser-sync', () => {
     });
 });
 
-gulp.task('bootstrap', () => {
-    return gulp.src('src/scss/bootstrap/bootstrap.scss')
-        .pipe(sass({
-            outputStyle: 'nested',
-            precision: 10,
-            includePaths: ['.']
-        }).on('error', sass.logError))
-        .pipe(gcmq())
-        .pipe(cleanCSS({
-            debug: true,
-            format: 'beautify',
-            compatibility: 'ie8',
-            level: {
-                1: {
-                    specialComments: 'all',
-                },
-            },
-        }))
-        .pipe(autoprefixer({
-            cascade: false
-        }))
-        .pipe(concat('bootstrap.min.css'))
-        .pipe(gulp.dest('dist/css'))
-        .pipe(browserSync.stream());
-});
 gulp.task('css', () => {
-    return gulp.src('src/scss/theme/**/*.scss')
+    return gulp.src('src/scss/**/*.scss')
         .pipe(sass({
             outputStyle: 'nested',
             precision: 10,
@@ -50,7 +27,8 @@ gulp.task('css', () => {
         .pipe(gcmq())
         .pipe(cleanCSS({
             debug: true,
-            format: 'beautify',
+            format: 'keep-breaks',
+            //format: 'beautify',
             compatibility: 'ie8',
             level: {
                 1: {
@@ -60,6 +38,9 @@ gulp.task('css', () => {
         }))
         .pipe(autoprefixer({
             cascade: false
+        }))
+        .pipe(purgecss({
+            content: ['src/**/*.html']
         }))
         .pipe(concat('app.min.css'))
         .pipe(gulp.dest('dist/css'))
@@ -68,32 +49,28 @@ gulp.task('css', () => {
 
 gulp.task('js', () => {
     return gulp.src('src/js/theme/**/*.js')
-        //.pipe(concat('app.min.js'))
-        //.pipe(minifyJS())
+        .pipe(concat('app.min.js'))
+        .pipe(minifyJS())
         .pipe(gulp.dest('dist/js'))
         .pipe(browserSync.stream());
 });
 
-gulp.task('html', (done) => {
-    gulp.src('src/**/*.html')
+gulp.task('html', () => {
+    return gulp.src('src/**/*.html')
         .pipe(gulp.dest('dist'))
         .pipe(browserSync.stream());
-        done();
 });
 
 gulp.task('watch', () => {
-    gulp.watch("src/scss/**/*.scss", ['css']);
-    gulp.watch("src/js/theme/**/*.js", ['js']);
-    gulp.watch("src/**/*.html", ['html']);
+    gulp.watch("src/scss/**/*.scss", gulp.series('css'));
+    gulp.watch("src/js/**/*.js", gulp.series('js'));
+    gulp.watch("src/**/*.html", gulp.series('html'));
 });
 
-gulp.task('default', () => {
-    runSequence(
-        'html',
-        'bootstrap',
-        'css',
-        'js',
-        'browser-sync',
-        'watch'
-    );
-});
+gulp.task('default', gulp.parallel(
+    'html',
+    'css',
+    'js',
+    'browser-sync',
+    'watch'
+));
