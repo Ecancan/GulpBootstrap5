@@ -6,27 +6,40 @@ module.exports = {
   mode: 'development',
   entry: {
     bootstrap: './src/js/bootstrap/index.esm.js',
-    vue: './src/components/components.js'
+    vue: './src/components/main.js'
   },
   output: {
     filename: "js/[name].bundle.js",
     path: path.resolve(__dirname, "dist")
   },
   module: {
-    rules: [
-      { test: /\.js$/, exclude: /node_modules/, use: 'babel-loader' },
-      { test: /\.vue$/, exclude: /node_modules/, use: 'vue-loader' },
-      { test: /\.css$/, exclude: /node_modules/, use: ['vue-style-loader', 'css-loader']},
+    rules: [{
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: 'babel-loader'
+      },
+      {
+        test: /\.vue$/,
+        exclude: /node_modules/,
+        use: 'vue-loader'
+      },
+      {
+        test: /\.css$/,
+        exclude: /node_modules/,
+        use: ['vue-style-loader', 'css-loader']
+      },
     ]
   },
   plugins: [
-    // make sure to include the plugin for the magic
     new VueLoaderPlugin()
   ],
   resolve: {
-      alias: {
-          vue: 'vue/dist/vue.js'
-      },
+    alias: {
+      vue: 'vue/dist/vue.js'
+    },
+  },
+  node: {
+    fs: "empty"
   },
   watch: true
 };
