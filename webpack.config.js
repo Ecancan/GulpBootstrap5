@@ -6,7 +6,7 @@ module.exports = {
   mode: 'development',
   entry: {
     bootstrap: './src/js/bootstrap/index.esm.js',
-    vue: './src/components/main.js'
+    vue: './src/js/theme/app.js'
   },
   output: {
     filename: "js/[name].bundle.js",
