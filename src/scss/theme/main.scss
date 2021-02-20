@@ -1,18 +1,12 @@
-/*! -------------------------------------------------------------------------- */
-/*!                               Settings Style                               */
-/*! -------------------------------------------------------------------------- */
-
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i&display=swap');
 // settings
-@import "variables";
+@import "src/scss/bootstrap/bootstrap";
 // extended
 @import "extended";
-
-/*! -------------------------------------------------------------------------- */
-/*!                       GoodFood Wordpress Theme Style                       */
-/*! -------------------------------------------------------------------------- */
-
+//plugins
+@import "src/scss/theme/inc/app";
 //theme
 @import "globals";
-@import "main/app";
-@import "pages/app";
-@import "components/app";
+@import "src/scss/theme/main/app";
+@import "src/scss/theme/pages/app";
+@import "src/scss/theme/components/app";
