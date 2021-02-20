@@ -7,7 +7,7 @@
  * --------------------------------------------------------------------------
  */
 
-import { getUID } from '../util/index'
+import { getUID } from '../util'
 
 let find = Element.prototype.querySelectorAll
 let findOne = Element.prototype.querySelector

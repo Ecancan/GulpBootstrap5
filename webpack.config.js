@@ -6,7 +6,7 @@ module.exports = {
   mode: 'development',
   entry: {
     bootstrap: './src/js/bootstrap/index.esm.js',
-    vue: './src/js/theme/app.js'
+    app: './src/js/theme/app.js'
   },
   output: {
     filename: "js/[name].bundle.js",
@@ -14,10 +14,10 @@ module.exports = {
   },
   module: {
     rules: [{
-        test: /\.js$/,
-        exclude: /node_modules/,
-        use: 'babel-loader'
-      },
+      test: /\.js$/,
+      exclude: /node_modules/,
+      use: 'babel-loader'
+    },
       {
         test: /\.vue$/,
         exclude: /node_modules/,

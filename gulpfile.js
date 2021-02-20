@@ -18,39 +18,39 @@ gulp.task('browser-sync', () => {
 });
 
 gulp.task('css', () => {
-    return gulp.src('src/scss/**/*.scss')
-        .pipe(sass({
-            outputStyle: 'nested',
-            precision: 10,
-            includePaths: ['.']
-        }).on('error', sass.logError))
-        .pipe(gcmq())
-        .pipe(cleanCSS({
-            debug: true,
-            format: 'keep-breaks',
-            //format: 'beautify',
-            compatibility: 'ie8',
-            level: {
-                1: {
-                    specialComments: 'all',
-                },
-            },
-        }))
-        .pipe(autoprefixer({
-            cascade: false
-        }))
-        .pipe(purgecss({
-            content: ['src/**/*.html']
-        }))
-        .pipe(concat('app.min.css'))
-        .pipe(gulp.dest('dist/css'))
-        .pipe(browserSync.stream());
+    return gulp.src('src/scss/theme/main.scss')
+      .pipe(sass({
+          outputStyle: 'nested',
+          precision: 10,
+          includePaths: ['.']
+      }).on('error', sass.logError))
+      .pipe(gcmq())
+      .pipe(cleanCSS({
+          debug: true,
+          format: 'keep-breaks',
+          //format: 'beautify',
+          compatibility: 'ie8',
+          level: {
+              1: {
+                  specialComments: 'all',
+              },
+          },
+      }))
+      .pipe(autoprefixer({
+          cascade: false
+      }))
+      //.pipe(purgecss({
+      //    content: ['src/**/*.html']
+      //}))
+      .pipe(concat('app.min.css'))
+      .pipe(gulp.dest('dist/css'))
+      .pipe(browserSync.stream());
 });
 
 gulp.task('html', () => {
     return gulp.src('src/**/*.html')
-        .pipe(gulp.dest('dist'))
-        .pipe(browserSync.stream());
+      .pipe(gulp.dest('dist'))
+      .pipe(browserSync.stream());
 });
 
 gulp.task('watch', () => {
@@ -59,8 +59,8 @@ gulp.task('watch', () => {
 });
 
 gulp.task('default', gulp.parallel(
-    'html',
-    'css',
-    'browser-sync',
-    'watch'
+  'html',
+  'css',
+  'browser-sync',
+  'watch'
 ));

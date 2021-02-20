@@ -1,0 +1,58 @@
+.page-box {
+  display: flex;
+  background-color: $background-primary;
+  flex: 1;
+  margin-bottom: $spacer-5;
+  position: relative;
+  overflow: hidden;
+  @include media-breakpoint-down(md){
+    height:250px;
+  }
+  h3 {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transform: rotate(-90deg) translate(100%, 0);
+    transform-origin: right bottom;
+    font-size: $font-size-4;
+    margin-bottom:0;
+    padding:10px;
+    padding-left:$spacer-3;
+    width:180px;
+    z-index: 3;
+    color: $white;
+  }
+  &:after{
+    content: "";
+    width: 40%;
+    height: 100%;
+    position: absolute;
+    z-index: 1;
+    right: 0;
+    bottom: 0;
+    background-image: linear-gradient(to right,transparent,rgba(0,0,0,77));
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transition: .2s;
+  }
+  &:hover{
+    &:after{
+      width: 100%;
+    }
+  }
+}
+
+.page-box--hero {
+  height: 400px;
+  @include media-breakpoint-down(md){
+    height:250px;
+  }
+  h3 {
+    width:300px;
+    font-size: $font-size-2;
+    padding-left:$spacer-4;
+    a {
+      color: $white;
+    }
+  }
+}

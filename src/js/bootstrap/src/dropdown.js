@@ -12,7 +12,7 @@ import {
   isVisible,
   noop,
   typeCheckConfig
-} from './util/index'
+} from './util'
 import Data from './dom/data'
 import EventHandler from './dom/event-handler'
 import Manipulator from './dom/manipulator'

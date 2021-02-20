@@ -1,0 +1,38 @@
+.about-item{
+  display:flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.about-item__icon{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width:100%;
+  height:120px;
+  margin-bottom:$spacer-5;
+  img{
+    display:flex;
+    width:120px;
+  }
+}
+
+.about-item__title{
+  display:flex;
+  h4{
+    text-align: center;
+    color:$white;
+  }
+}
+.about-item__description{
+  display:flex;
+  margin-bottom:$spacer-5;
+  p{
+    text-align: center;
+    color:$white;
+    opacity: 0.8;
+    font-size:$font-size-7;
+  }
+}

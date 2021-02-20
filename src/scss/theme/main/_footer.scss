@@ -1,1 +1,139 @@
-// css
+.footer-top {
+  border-top: 1px solid $white;
+  border-bottom: 1px solid $white;
+  padding-top: $spacer-5;
+  padding-bottom: $spacer-5;
+  margin-bottom: $spacer-4;
+}
+
+.footer-menu-widget {
+  h5 {
+    color: $primary;
+  }
+
+  ul {
+    li {
+      a {
+        color: $white;
+        opacity: .8;
+        transition: 0.2s;
+        margin-bottom: $spacer-2;
+        display: flex;
+        font-size: $font-size-7;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+.footer-logo {
+  margin-bottom: $spacer;
+
+  img {
+    width: 110px;
+  }
+}
+
+.footer-contact__content {
+  display: flex;
+  flex-direction: column;
+
+  p {
+    font-size: $font-size-7;
+    opacity: .8;
+    color: $white;
+  }
+
+  form {
+    display: flex;
+    flex-wrap: wrap;
+
+    input {
+      background-color: transparent;
+      width: 100%;
+      margin-bottom: $spacer-3;
+      padding: $spacer-2;
+      border: 1px solid $primary;
+      color: $white;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    button {
+      background-color: $primary;
+      color: $white;
+      border: none;
+      padding: $spacer-1 $spacer-3;
+      font-size: $font-size-7;
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}
+
+.footer-contact__content-title {
+  collor: $white;
+  font-weight: $font-weight-bold;
+  color: $white;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: $spacer-5;
+  @include media-breakpoint-down(xs){
+    flex-direction: column;
+  }
+  p {
+    color: $white;
+    opacity: .8;
+    font-size: $font-size-7;
+    margin-bottom: 0;
+    @include media-breakpoint-down(xs){
+      margin-bottom:$spacer-5;
+    }
+  }
+
+  ul {
+    display: flex;
+    margin-left: -$spacer/2;
+    margin-right: -$spacer/2;
+
+    li {
+      padding-left: $spacer/2;
+      padding-right: $spacer/2;
+
+      a {
+        i {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          display: flex;
+          background-color: $primary;
+          color: $white;
+          justify-content: center;
+          align-items: center;
+          transition: .2s;
+          border: 2px solid transparent;
+        }
+
+        &:hover {
+          i {
+            transition: .2s;
+            background-color: transparent;
+            color: $white;
+            border: 2px solid $primary;
+          }
+        }
+      }
+    }
+  }
+}
