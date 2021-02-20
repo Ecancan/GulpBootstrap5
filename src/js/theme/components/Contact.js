@@ -1,4 +1,4 @@
-import Vue from 'vue';
+/*import Vue from 'vue';
 new Vue({
     el: '#contact',
     data: {
@@ -9,17 +9,8 @@ new Vue({
         message: null,
     },
     methods:{
-        submitForm: function (e) {
-
-        },
     },
     computed: {
-        isDisabled: function(){
-            if (this.name && this.email && this.subject && this.message) {
-                return false;
-            }else{
-                return true;
-            }
-        }
     }
 });
+*/
